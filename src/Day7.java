@@ -11,7 +11,7 @@ public class Day7 {
 
 
     public Day7(){
-        String path = "C:/Users/Karl/AdventOfCode/src/input.txt";
+        String path = "src/input.txt";
         File file = new File(path);
 
 
@@ -49,11 +49,13 @@ public class Day7 {
                     childrenSubString = childrenSubString.replaceAll("[$,]", "");
 
                     String [] children = childrenSubString.split("\\s+");
-
+                    
                     for (String childName : children){
                         if (parentlessNodes.containsKey(childName)){
                             newNode.addChild(parentlessNodes.get(childName));
                             parentlessNodes.remove(childName);
+                        }else {
+                        	nodelessChildren.put(childName, new Node(childName));
                         }
                     }
                 }
