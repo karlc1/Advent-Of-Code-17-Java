@@ -16,6 +16,8 @@ import java.util.*;
  * 
  */
 public class Day7 {
+	
+	int part2GoalWeight = 0;
 
 	public Day7() {
 		String path = "src/input.txt"; // Paste input in this file
@@ -92,9 +94,8 @@ public class Day7 {
 		}
 
 		Node unbalanced = checkBalance(root);
-
-		System.out.println("Unbalanced: " + unbalanced.subTreeWeight);
-
+		
+		findUnbalancedNode(root);
 	}
 
 	
@@ -111,6 +112,40 @@ public class Day7 {
 	}
 	
 	
+	void findUnbalancedNode(Node root) {
+		
+		Node lastChecked = root;
+		Node parentOfLastChecked = root;
+		
+		for (Node nextNode = checkBalance(root); !lastChecked.equals(nextNode); nextNode = checkBalance(lastChecked)) {
+			parentOfLastChecked = lastChecked;
+			lastChecked = nextNode;
+		}
+		
+		System.out.println("UNBALANCED NODE: " + lastChecked.name);
+		
+		for (Node sibling : parentOfLastChecked.children) {
+			if (sibling != lastChecked) {
+				part2GoalWeight = sibling.subTreeWeight;
+				System.out.println("Total sub weight : " + lastChecked.subTreeWeight);
+				System.out.println("Own weight : " + lastChecked.getWeight());
+				System.out.println("Goal weight : " + part2GoalWeight);
+				
+				int weightChange = part2GoalWeight - lastChecked.subTreeWeight;
+				
+				System.out.println("Weight change: " + weightChange);
+				
+				int requiredWeight = lastChecked.getWeight() + weightChange;
+				
+				System.out.println("Required Weight: " + requiredWeight);
+				
+				break;
+			}
+		}
+	
+	
+	}
+	
 	
 	/**
 	 * Finds the one unbalanced node 
@@ -120,7 +155,6 @@ public class Day7 {
 
 	public Node checkBalance(Node node) {
 
-		int rightWeight = 0;
 		ArrayList<Integer> foundWeights = new ArrayList<>();
 		ArrayList<Node> candidates = new ArrayList<>();
 
@@ -147,8 +181,15 @@ public class Day7 {
 			}
 		}
 
-		return candidates.get(0);
-
+		if (candidates.size() == 1) {
+			return candidates.get(0);
+		}else if (candidates.size() > 1) {
+			System.err.println("Error in checkBalance");
+		}
+		
+		// Current node returns if all children of the node are balanced, meaning that the current parent node is unbalanced
+		
+		return node;
 	}
 
 	public static void main(String[] args) throws IOException, IOException {
