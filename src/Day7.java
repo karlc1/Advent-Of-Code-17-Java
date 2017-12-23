@@ -66,18 +66,17 @@ public class Day7 {
         
         Node root = null;
         
-        Iterator it = parentlessNodes.entrySet().iterator();
+        @SuppressWarnings("rawtypes")
+		Iterator it = parentlessNodes.entrySet().iterator();
         while (it.hasNext()) {
-            Map.Entry pair = (Map.Entry)it.next();
+            @SuppressWarnings("rawtypes")
+			Map.Entry pair = (Map.Entry)it.next();
             System.out.println("Root node: " + pair.getKey());
             
             root = (Node) pair.getValue();
         }
         
-        
-        for (Node child : root.getChildren()) {
-        	System.out.println(child.getName() + " (" + child.getWeight() + ")");
-        }        
+          
         
         getWeights(root);
         
@@ -85,7 +84,13 @@ public class Day7 {
         	System.out.println(child.getName() + " (" + child.subTreeWeight + ")");
         }      
         
-        System.out.println(root.subTreeWeight);
+        
+        Node unbalanced = checkBalance(root);
+        
+        System.out.println("Unbalanced: " + unbalanced.subTreeWeight);
+        
+        
+        
     }
     
     
@@ -94,6 +99,34 @@ public class Day7 {
     		getWeights(child);
     		node.subTreeWeight += child.getSubTreeWeight();
     	}    	
+    }
+    
+    
+    public Node checkBalance(Node node) {
+    	
+    	int rightWeight = 0;
+    	ArrayList<Integer> foundWeights = new ArrayList<>();
+    	ArrayList<Node> candidates = new ArrayList<>();    	
+    	
+    	
+    	for (Node child : node.getChildren()) {
+    		
+    		if (foundWeights.contains(child.subTreeWeight)) {
+    	    	Iterator<Node> i = candidates.iterator();
+    	    	while (i.hasNext()) {
+    	    	   Node n = i.next(); 
+    	    	   
+    	    	   if (n.subTreeWeight == child.subTreeWeight) {
+    	        	   i.remove();
+    	    	   }
+    	    	}    		}else {
+    			foundWeights.add(child.subTreeWeight);
+    			candidates.add(child);
+    		}
+    	}  
+    	
+    	return candidates.get(0);
+    	
     }
     
     
