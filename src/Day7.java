@@ -20,13 +20,9 @@ public class Day7 {
 
 
 
-        // Hanterar inte nodes som forst ar ett nodelesschild och sen deklareras, fixa
-
-
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
             String line;
             while ((line = br.readLine()) != null) {
-                // process the line.
 
 
                 Node newNode;
@@ -55,7 +51,10 @@ public class Day7 {
                             newNode.addChild(parentlessNodes.get(childName));
                             parentlessNodes.remove(childName);
                         }else {
-                        	nodelessChildren.put(childName, new Node(childName));
+                        	
+                        	Node newChild = new Node(childName);
+                        	nodelessChildren.put(childName, newChild);
+                        	newNode.addChild(newChild);
                         }
                     }
                 }
@@ -64,16 +63,44 @@ public class Day7 {
             e.printStackTrace();
         }
 
-        System.out.println("ParentlessNodes left: " + parentlessNodes.size());
-
+        
+        Node root = null;
+        
         Iterator it = parentlessNodes.entrySet().iterator();
         while (it.hasNext()) {
             Map.Entry pair = (Map.Entry)it.next();
-            System.out.println(pair.getKey() + " = " + pair.getValue());
+            System.out.println("Root node: " + pair.getKey());
+            
+            root = (Node) pair.getValue();
         }
-
-
+        
+        
+        for (Node child : root.getChildren()) {
+        	System.out.println(child.getName() + " (" + child.getWeight() + ")");
+        }        
+        
+        getWeights(root);
+        
+        for (Node child : root.getChildren()) {
+        	System.out.println(child.getName() + " (" + child.subTreeWeight + ")");
+        }      
+        
+        System.out.println(root.subTreeWeight);
     }
+    
+    
+    public void getWeights(Node node) {
+    	for (Node child : node.getChildren()) {
+    		getWeights(child);
+    		node.subTreeWeight += child.getSubTreeWeight();
+    	}    	
+    }
+    
+    
+    
+    
+    
+    
 
 
 
@@ -91,11 +118,14 @@ public class Day7 {
         private String name;
         private int weight;
         private ArrayList<Node> children;
+        
+        private int subTreeWeight;
 
         protected Node (String name, int weight){
             this.name = name;
             this.weight = weight;
             children = new ArrayList<>();
+            subTreeWeight = weight;
         }
 
         protected Node (String name){
@@ -106,12 +136,25 @@ public class Day7 {
         public String getName(){
             return name;
         }
+        
+        public int getSubTreeWeight(){
+            return subTreeWeight;
+        }
+
+        public void setSubTreeWeigt(int weight){
+            this.subTreeWeight = weight;
+        }
+        
+        public void addSubTreeWeigt(int weight){
+            this.subTreeWeight += weight;
+        }
 
         public int getWeight(){
             return weight;
         }
 
         public void setWeigt(int weight){
+        	this.subTreeWeight = weight;
             this.weight = weight;
         }
 
