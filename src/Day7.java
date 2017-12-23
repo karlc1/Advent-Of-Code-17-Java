@@ -12,13 +12,11 @@ import java.util.*;
  * https://adventofcode.com/2017/day/7
  * 
  * 
- * The problem can be solved by creating a normal tree structure, but the tricky part is that nodes are declared as parents or children out of order
- * 
+ * The problem in part 1 can be solved by creating a normal tree structure, but the tricky part is that nodes are declared as parents or children out of order
+ * The problem in part 2 requires traversing, first post-order for calculating sub tree weights, and then in-order to find the unbalanced node
  */
 public class Day7 {
 	
-	int part2GoalWeight = 0;
-
 	public Day7() {
 		String path = "src/input.txt"; // Paste input in this file
 		File file = new File(path);
@@ -77,24 +75,23 @@ public class Day7 {
 
 		Node root = null;
 
-		@SuppressWarnings("rawtypes")
+		// Part 1 output
+		
+		// Pull out the only remaining map entry, which is the root node 
 		Iterator it = parentlessNodes.entrySet().iterator();
 		while (it.hasNext()) {
-			@SuppressWarnings("rawtypes")
 			Map.Entry pair = (Map.Entry) it.next();
-			System.out.println("Root node: " + pair.getKey());
-
+			System.out.println("Root node: (Part 1 Output) " + pair.getKey());
 			root = (Node) pair.getValue();
 		}
 
-		getWeights(root);
-
-		for (Node child : root.getChildren()) {
-			System.out.println(child.getName() + " (" + child.subTreeWeight + ")");
-		}
-
-		Node unbalanced = checkBalance(root);
 		
+		// Part 2 output
+		
+		// Calculate the sub tree weights for each node
+		getWeights(root);
+		
+		// Check which node is unbalanced and output what weight it should have
 		findUnbalancedNode(root);
 	}
 
@@ -112,32 +109,30 @@ public class Day7 {
 	}
 	
 	
+	/**
+	 * Finds the unbalanced node and outputs its required weight to balance the rest of the tree
+	 * @param root
+	 */
+	
 	void findUnbalancedNode(Node root) {
 		
 		Node lastChecked = root;
 		Node parentOfLastChecked = root;
 		
+		// Checks balance for each depth level, if the same ndoe is returned twice it means that the unbalanced node is found
+		// Parent is saved in order to check the current nodes siblings 
 		for (Node nextNode = checkBalance(root); !lastChecked.equals(nextNode); nextNode = checkBalance(lastChecked)) {
 			parentOfLastChecked = lastChecked;
 			lastChecked = nextNode;
 		}
-		
-		System.out.println("UNBALANCED NODE: " + lastChecked.name);
-		
+				
+		// Check siblings to find what the weight should be and calculate the difference 
 		for (Node sibling : parentOfLastChecked.children) {
 			if (sibling != lastChecked) {
-				part2GoalWeight = sibling.subTreeWeight;
-				System.out.println("Total sub weight : " + lastChecked.subTreeWeight);
-				System.out.println("Own weight : " + lastChecked.getWeight());
-				System.out.println("Goal weight : " + part2GoalWeight);
-				
-				int weightChange = part2GoalWeight - lastChecked.subTreeWeight;
-				
-				System.out.println("Weight change: " + weightChange);
-				
+				int goalWeight = sibling.subTreeWeight;
+				int weightChange = goalWeight - lastChecked.subTreeWeight;
 				int requiredWeight = lastChecked.getWeight() + weightChange;
-				
-				System.out.println("Required Weight: " + requiredWeight);
+				System.out.println("Required Weight: (Part 2 output) " + requiredWeight);
 				
 				break;
 			}
