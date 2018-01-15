@@ -8,6 +8,9 @@ import java.util.Map;
 
 /**
  * Created by Karl on 2018-01-15.
+ *
+ * Part 1 and 2 are ran simultaneously as part 2 only involves checking if each new change becomes larger
+ * than the previous largest value, no need for separate methods
  */
 public class Day8 {
 
@@ -111,6 +114,9 @@ public class Day8 {
         // Add new value to register
         registers.put(changeReg, newVal);
 
+
+        // If the new value is larger than the largest value ever, set it as such
+        // This is the only part needed for part 2 of the challenge
         if (newVal > highestValueEver) {
             highestValueEver = newVal;
         }
