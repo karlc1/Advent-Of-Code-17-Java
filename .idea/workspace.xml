@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="72bacad2-2674-47b0-8e48-9702f0732ed6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Day9.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Day10.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/AdventOfCode/Day9.class" afterPath="$PROJECT_DIR$/out/production/AdventOfCode/Day9.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Day9.java" afterPath="$PROJECT_DIR$/src/Day9.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/input.txt" afterPath="$PROJECT_DIR$/src/input.txt" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -46,7 +48,7 @@
       <file leaf-file-name="Day8.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Day8.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="464">
+            <state relative-caret-position="116">
               <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -55,11 +57,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Day9.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Day9.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Day9.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="672">
-              <caret line="69" column="33" lean-forward="true" selection-start-line="69" selection-start-column="33" selection-end-line="69" selection-end-column="33" />
+            <state relative-caret-position="614">
+              <caret line="93" column="0" lean-forward="false" selection-start-line="93" selection-start-column="0" selection-end-line="95" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Day10.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Day10.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="609">
+              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -71,7 +85,7 @@
         <entry file="file://$PROJECT_DIR$/src/input.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="19334" lean-forward="true" selection-start-line="0" selection-start-column="19334" selection-end-line="0" selection-end-column="19334" />
+              <caret line="0" column="30" lean-forward="false" selection-start-line="0" selection-start-column="30" selection-end-line="0" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -109,9 +123,10 @@
         <option value="$PROJECT_DIR$/src/Day5.java" />
         <option value="$PROJECT_DIR$/src/Day6.java" />
         <option value="$PROJECT_DIR$/src/Day7.java" />
-        <option value="$PROJECT_DIR$/src/Day8.java" />
-        <option value="$PROJECT_DIR$/src/input.txt" />
         <option value="$PROJECT_DIR$/src/Day9.java" />
+        <option value="$PROJECT_DIR$/src/Day8.java" />
+        <option value="$PROJECT_DIR$/src/Day10.java" />
+        <option value="$PROJECT_DIR$/src/input.txt" />
       </list>
     </option>
   </component>
@@ -182,22 +197,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Day9">
-    <configuration default="false" name="Day5" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="Day5" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="AdventOfCode" />
-      <envs />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Application.Day10">
     <configuration default="false" name="Day6" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="Day6" />
@@ -246,6 +246,21 @@
     <configuration default="false" name="Day9" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <option name="MAIN_CLASS_NAME" value="Day9" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="AdventOfCode" />
+      <envs />
+      <method />
+    </configuration>
+    <configuration default="false" name="Day10" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="Day10" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -463,19 +478,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Application.Day5" />
-      <item index="1" class="java.lang.String" itemvalue="Application.Day6" />
-      <item index="2" class="java.lang.String" itemvalue="Application.Day7" />
-      <item index="3" class="java.lang.String" itemvalue="Application.Day8" />
-      <item index="4" class="java.lang.String" itemvalue="Application.Day9" />
+      <item index="0" class="java.lang.String" itemvalue="Application.Day6" />
+      <item index="1" class="java.lang.String" itemvalue="Application.Day7" />
+      <item index="2" class="java.lang.String" itemvalue="Application.Day8" />
+      <item index="3" class="java.lang.String" itemvalue="Application.Day9" />
+      <item index="4" class="java.lang.String" itemvalue="Application.Day10" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.Day9" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Day8" />
-        <item index="2" class="java.lang.String" itemvalue="Application.Day7" />
-        <item index="3" class="java.lang.String" itemvalue="Application.Day6" />
-        <item index="4" class="java.lang.String" itemvalue="Application.Day5" />
+        <item index="0" class="java.lang.String" itemvalue="Application.Day10" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Day9" />
+        <item index="2" class="java.lang.String" itemvalue="Application.Day8" />
+        <item index="3" class="java.lang.String" itemvalue="Application.Day7" />
+        <item index="4" class="java.lang.String" itemvalue="Application.Day6" />
       </list>
     </recent_temporary>
   </component>
@@ -666,6 +681,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Day5.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2204">
+          <caret line="89" column="0" lean-forward="false" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Day9.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="614">
+          <caret line="93" column="0" lean-forward="false" selection-start-line="93" selection-start-column="0" selection-end-line="95" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Day7.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -690,17 +723,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Day5.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2204">
-          <caret line="89" column="0" lean-forward="false" selection-start-line="89" selection-start-column="0" selection-end-line="89" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Day8.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
+        <state relative-caret-position="116">
           <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -711,15 +736,15 @@
     <entry file="file://$PROJECT_DIR$/src/input.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="19334" lean-forward="true" selection-start-line="0" selection-start-column="19334" selection-end-line="0" selection-end-column="19334" />
+          <caret line="0" column="30" lean-forward="false" selection-start-line="0" selection-start-column="30" selection-end-line="0" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Day9.java">
+    <entry file="file://$PROJECT_DIR$/src/Day10.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="69" column="33" lean-forward="true" selection-start-line="69" selection-start-column="33" selection-end-line="69" selection-end-column="33" />
+        <state relative-caret-position="609">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

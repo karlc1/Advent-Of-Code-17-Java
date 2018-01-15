@@ -32,6 +32,7 @@ public class Day9 {
         boolean withinGarbage = false;
         int groupLevel = 0;
         long totalScore = 0;
+        long totalGarbage = 0;
 
         while ((c = reader.read()) != -1) {
             char character = (char) c;
@@ -68,6 +69,8 @@ public class Day9 {
                     if (character == '>') {
                         withinGarbage = false;
                         continue;
+                    }else{
+                        totalGarbage++;
                     }
                 }
 
@@ -81,6 +84,8 @@ public class Day9 {
 
 
         System.out.println("Total Score: " + totalScore);
+        System.out.println("Total Garbage: " + totalGarbage);
+
 
 
     }
