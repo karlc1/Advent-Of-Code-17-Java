@@ -124,6 +124,34 @@ public class Day10 {
 
         ////////// XOR THE VALUES ///////////
 
+        ArrayList<Integer> xorList = new ArrayList<>();
+
+        int currXor = rope[0];
+
+        for (int i = 0; i < ropeSize; i++) {
+
+            if ((i % 16 == 0 && i != 0) || i == ropeSize -1) {
+                xorList.add(currXor);
+                currXor = rope[i];
+            }
+
+            else {
+                currXor = currXor ^ rope[i];
+            }
+        }
+
+        String hashString = "";
+
+        for (int i : xorList) {
+            hashString += Integer.toHexString(0x100 | i).substring(1); // Horrible hack for getting leading zero. Only works for dec values below 256
+        }
+
+        System.out.println(hashString);
+
+        //31efeb34ea91902bb2f59c9920caa669
+        //33efeb34ea91902bb2f59c9920caa6cd
+        //3efbe78a8d82f29979031a4aa0b16a9d
+
 
 
 
